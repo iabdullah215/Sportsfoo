@@ -28,16 +28,17 @@
 - Python 3.x
 
 ## Usage
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/PortSpoof.git
-   cd PortSpoof
-   ```
-3. Run the tool:
+1. Clone the repo.
 
   ```bash
-  python3 portspoof.py
+   git clone https://github.com/yourusername/PortSpoof.git
+   cd Sportsfoo
+   ```
+
+2. Run the tool:
+
+  ```bash
+  python3 sportsfoo.py
   ```
 
   > Follow the on-screen instructions to select which ports to spoof.
@@ -82,6 +83,8 @@
   ```
 ## Disclaimer
   This tool is intended for educational purposes only. Ensure that you have permission to test the network services you are targeting. Use responsibly and ethically.
+
+---
 
 ## Usage Example:
 
