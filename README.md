@@ -30,12 +30,11 @@
 ## Usage
 
 1. Clone the repository:
-
    ```bash
    git clone https://github.com/yourusername/PortSpoof.git
    cd PortSpoof
    ```
-2. Run the tool:
+3. Run the tool:
 
   ```bash
   python3 portspoof.py
