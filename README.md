@@ -47,41 +47,24 @@
   When the tool starts, you will see the following options:
   
   ```console
-┌──(!abdu11ah㉿MNM)-[~]
-└─$ python3 sportsfoo.py  
-
-  ██████     ██▓███      ▒█████      ██▀███     ▄▄▄█████▓     ██████      █████▒    ▒█████      ▒█████  
-▒██    ▒    ▓██░  ██▒   ▒██▒  ██▒   ▓██ ▒ ██▒   ▓  ██▒ ▓▒   ▒██    ▒    ▓██   ▒    ▒██▒  ██▒   ▒██▒  ██▒
-░ ▓██▄      ▓██░ ██▓▒   ▒██░  ██▒   ▓██ ░▄█ ▒   ▒ ▓██░ ▒░   ░ ▓██▄      ▒████ ░    ▒██░  ██▒   ▒██░  ██▒
-  ▒   ██▒   ▒██▄█▓▒ ▒   ▒██   ██░   ▒██▀▀█▄     ░ ▓██▓ ░      ▒   ██▒   ░▓█▒  ░    ▒██   ██░   ▒██   ██░
-▒██████▒▒   ▒██▒ ░  ░   ░ ████▓▒░   ░██▓ ▒██▒     ▒██▒ ░    ▒██████▒▒   ░▒█░       ░ ████▓▒░   ░ ████▓▒░
-▒ ▒▓▒ ▒ ░   ▒▓▒░ ░  ░   ░ ▒░▒░▒░    ░ ▒▓ ░▒▓░     ▒ ░░      ▒ ▒▓▒ ▒ ░    ▒ ░       ░ ▒░▒░▒░    ░ ▒░▒░▒░ 
-░ ░▒  ░ ░   ░▒ ░          ░ ▒ ▒░      ░▒ ░ ▒░       ░       ░ ░▒  ░ ░    ░           ░ ▒ ▒░      ░ ▒ ▒░ 
-░  ░  ░     ░░          ░ ░ ░ ▒       ░░   ░      ░         ░  ░  ░      ░ ░       ░ ░ ░ ▒     ░ ░ ░ ▒  
-      ░                     ░ ░        ░                          ░                    ░ ░         ░ ░  
-
-        BY: !abdu11ah
-
-                                                                                                        
-
-[*] Checking System Requirements...
-[*] Initializing things...
-[*] Starting Sportsfoo...
-
-[=================================================]
-
-[C H O O S E  A N Y  O F  T H E  F O L L O W I N G]
-
-[1] Spoof HTTP (80)
-[2] Spoof SSH (22)
-[3] Spoof SMTP (25)
-[4] Spoof HTTPS (443)
-[5] Spoof All
-[6] Exit
-
-[=================================================]
-
-[+] Select option(s) (e.g. 1,2):
+  [*] Checking System Requirements...
+  [*] Initializing things...
+  [*] Starting Sportsfoo...
+  
+  [=================================================]
+  
+  [C H O O S E  A N Y  O F  T H E  F O L L O W I N G]
+  
+  [1] Spoof HTTP (80)
+  [2] Spoof SSH (22)
+  [3] Spoof SMTP (25)
+  [4] Spoof HTTPS (443)
+  [5] Spoof All
+  [6] Exit
+  
+  [=================================================]
+  
+  [+] Select option(s) (e.g. 1,2):
   ```
   
   > Select the desired option(s) by entering the corresponding number(s) separated by commas.
