@@ -32,7 +32,7 @@
 1. Clone the repo.
 
   ```bash
-   git clone https://github.com/yourusername/PortSpoof.git
+   git clone https://github.com/iabdullah215/Sportsfoo
    cd Sportsfoo
    ```
 
