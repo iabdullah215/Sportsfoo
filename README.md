@@ -19,6 +19,7 @@
   - SSH (22)
   - SMTP (25)
   - HTTPS (443)
+  - Custom port spoofing
 - Display customizable banners for each service.
 - Multi-threaded handling of incoming connections.
 - Timeout mechanism that returns to the menu after inactivity.
@@ -60,7 +61,8 @@
   [3] Spoof SMTP (25)
   [4] Spoof HTTPS (443)
   [5] Spoof All
-  [6] Exit
+  [6] Spoof Custom Port
+  [7] Exit
   
   [=================================================]
   
@@ -79,7 +81,8 @@
   [3] Spoof SMTP (25)
   [4] Spoof HTTPS (443)
   [5] Spoof All
-  [6] Exit
+  [6] Spoof Custom Port
+  [7] Exit
   
   [=================================================]
   
@@ -90,7 +93,7 @@
 
 ---
 
-## Usage Example:
+## Usage Example 1:
 
 ```console
 [*] Checking System Requirements...
@@ -106,7 +109,8 @@
 [3] Spoof SMTP (25)
 [4] Spoof HTTPS (443)
 [5] Spoof All
-[6] Exit
+[6] Spoof Custom Port
+[7] Exit
 
 [=================================================]
 
@@ -144,6 +148,7 @@
 [+] Connection from 127.0.0.1:48424 on port 80
 [+] Connection from 127.0.0.1:51194 on port 443
 ```
+
 ## Local Host NMAP Scan:
 
 ```console
@@ -163,4 +168,53 @@ Service Info: Host:  fake-smtp.example.com; OS: Linux; CPE: cpe:/o:linux:linux_k
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 0.39 seconds
+```
+
+---
+
+## Usage Example 2:
+
+```console
+[*] Checking System Requirements...
+[*] Initializing things...
+[*] Starting Sportsfoo...
+
+[=================================================]
+
+[C H O O S E  A N Y  O F  T H E  F O L L O W I N G]
+
+[1] Spoof HTTP (80)
+[2] Spoof SSH (22)
+[3] Spoof SMTP (25)
+[4] Spoof HTTPS (443)
+[5] Spoof All
+[6] Spoof Custom Port
+[7] Exit
+
+[=================================================]
+
+[+] Select option(s) (e.g. 1,2): 6
+[+] Enter the port number: 8888
+[+] Enter the service (HTTP, SSH, SMTP, HTTPS): SMTP
+[*] Listening on port 8888...
+[+] Connection from 127.0.0.1:34074 on port 8888
+[+] Connection from 127.0.0.1:34090 on port 8888
+```
+
+## Local Host Scan:
+
+```console
+┌──(!abdu11ah㉿MNM)-[~]
+└─$ nmap -sV localhost
+Starting Nmap 7.94 ( https://nmap.org ) at 2024-09-29 07:58 EDT
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00033s latency).
+Other addresses for localhost (not scanned): ::1
+Not shown: 999 closed tcp ports (conn-refused)
+PORT     STATE SERVICE VERSION
+8888/tcp open  smtp    Postfix smtpd
+Service Info: Host:  fake-smtp.example.com
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 0.36 seconds
 ```
