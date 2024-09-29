@@ -28,6 +28,13 @@ PORTS = {
     443: b"HTTP/1.1 200 OK\r\nServer: nginx/1.18.0 (Ubuntu)\r\nContent-Length: 50\r\nContent-Type: text/html\r\n\r\n<html><body><h1>Fake HTTPS Server</h1></body></html>"
 }
 
+BANNERS = {
+    'HTTP': PORTS[80],
+    'SSH': PORTS[22],
+    'SMTP': PORTS[25],
+    'HTTPS': PORTS[443]
+}
+
 def start_spoofing(port, banner, timeout):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind(('0.0.0.0', port))
@@ -59,10 +66,10 @@ def display_menu():
     print("[3] Spoof SMTP (25)")
     print("[4] Spoof HTTPS (443)")
     print("[5] Spoof All")
-    print("[6] Exit")
+    print("[6] Spoof Custom Port")
+    print("[7] Exit")
     print("\n[=================================================]")
     return input("\n[+] Select option(s) (e.g. 1,2): ").split(',')
-    print("\n[=================================================]")
 
 def get_ports_from_choices(choices):
     selected_ports = []
@@ -77,6 +84,14 @@ def get_ports_from_choices(choices):
             selected_ports.append(443)
         elif choice.strip() == '5':
             return [80, 22, 25, 443]
+        elif choice.strip() == '6':
+            port = int(input("[+] Enter the port number: "))
+            service = input("[+] Enter the service (HTTP, SSH, SMTP, HTTPS): ").strip().upper()
+            if service in BANNERS:
+                selected_ports.append((port, BANNERS[service]))
+            else:
+                print("[!] Invalid service selected.")
+                continue
     return selected_ports
 
 def main():
@@ -93,7 +108,7 @@ def main():
     while True:
         choices = display_menu()
 
-        if '6' in choices:
+        if '7' in choices:
             print("[*] Exiting...")
             break
 
@@ -103,8 +118,14 @@ def main():
             continue
 
         threads = []
-        for port in selected_ports:
-            t = threading.Thread(target=start_spoofing, args=(port, PORTS[port], timeout_duration))
+        for item in selected_ports:
+            if isinstance(item, tuple):
+                port, banner = item
+                t = threading.Thread(target=start_spoofing, args=(port, banner, timeout_duration))
+            else:
+                port = item
+                banner = PORTS[port]
+                t = threading.Thread(target=start_spoofing, args=(port, banner, timeout_duration))
             t.start()
             threads.append(t)
 
